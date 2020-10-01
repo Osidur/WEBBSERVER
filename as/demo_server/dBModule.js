@@ -7,22 +7,22 @@ db.once('open', function () {
     // we're connected!
 });
 
-const personSchema = new mongoose.Schema({
+const itemSchema = new mongoose.Schema({
   name: String,
-  email: String,
+  size: Number,
   age: Number
 });
 
-const Person = mongoose.model('Person', personSchema);
+const Item = mongoose.model('Item', itemSchema);
 
-exports.storePerson = (name, email, age) => {
-    var person = new Person({
+exports.storeItem = (name, size, age) => {
+    var item = new Item({
         name: name, 
-        email: email, 
+        size: size, 
         age: age 
        })
    
-     person.save(()=>{
-       console.log("Successfully saved person in database!")
+     item.save(()=>{
+       console.log("Successfully saved item in database!")
      })
 }
