@@ -1,14 +1,14 @@
 {
   "name": "demo_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a server!",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "run": "node app.js"
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Niklas",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
