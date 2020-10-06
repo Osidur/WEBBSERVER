@@ -8,5 +8,9 @@ db.once('open', function () {
 });
 
 
-dBModule.storeElement(req.body.name, req.body.email, req.body.age);
+dBModule.storeElement = function() {
+  Element.save(function() {
+    console.log("AA")
+  })
+}
 //hjelp mej snela? :)?
