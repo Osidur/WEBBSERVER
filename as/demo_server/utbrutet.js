@@ -8,7 +8,7 @@ const personSchema = new mongoose.Schema({
   
   const Person = mongoose.model('Person', personSchema);
   
-  exports.storePerson = (name, email, age) => {
+  exports.storePerson = function(name, email, age) {
       var person = new Person({
           name: name, 
           email: email, 
