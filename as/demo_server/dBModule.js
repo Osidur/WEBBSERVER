@@ -8,8 +8,8 @@ db.once('open', function () {
 });
 
 
-dBModule.storeElement = function() {
-  Element.save(function() {
+dBModule.storeElement = function(element) {
+  element.save(function() {
     console.log("AA")
   })
 }
