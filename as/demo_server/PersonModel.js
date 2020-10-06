@@ -8,11 +8,12 @@ const personSchema = new mongoose.Schema({
   
 const Person = mongoose.model('Person', personSchema);
   
-exports.storePerson = function(name, email, age) {
+exports.createPerson = function(name, email, age) {
     var person = new Person({
         name: name, 
         email: email, 
         age: age 
-        })
+    })
+
     return person;
 }

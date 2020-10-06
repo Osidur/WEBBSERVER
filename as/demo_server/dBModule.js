@@ -6,4 +6,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     // we're connected!
 });
+
+
+dBModule.storeElement(req.body.name, req.body.email, req.body.age);
 //hjelp mej snela? :)?
