@@ -4,10 +4,11 @@ const personModel = require('./PersonModel');
 const app = express()
 const port = 3000
 
-const clientDir = __dirname + "\\client\views\pages\\"
+const clientDir = __dirname + "\\client\\"
 
 app.set('viewengine ejs');
 
+app.use(express.static(clientDir))
 app.use(express.json())
 app.use(express.urlencoded())
 
