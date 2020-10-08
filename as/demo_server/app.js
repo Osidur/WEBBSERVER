@@ -6,6 +6,8 @@ const port = 3000
 
 const clientDir = __dirname + "\\client\\"
 
+app.set('viewengine ejs');
+
 app.use(express.json())
 app.use(express.urlencoded())
 
