@@ -4,7 +4,7 @@ const personModel = require('./PersonModel');
 const app = express()
 const port = 3000
 
-const clientDir = __dirname + "\\client\\"
+const clientDir = __dirname + "\\client\views\pages\\"
 
 app.set('viewengine ejs');
 
@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 app.get('/', function(req, res) {
-  res.sendFile(clientDir + "index.html")
+  res.sendFile(clientDir + "index.ejs")
 })
 
 app.get('/stilen', function(req, res) {
