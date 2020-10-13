@@ -7,10 +7,9 @@ db.once('open', function () {
     // we're connected!
 });
 
-
 dBModule.storeElement = function(element) {
   element.save(function() {
     console.log("AA")
   })
 }
-//hjelp mej snela? :)?
+//ba
