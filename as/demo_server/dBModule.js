@@ -7,7 +7,7 @@ db.once('open', function () {
     // we're connected!
 });
 
-dBModule.storeElement = function(element) {
+exports.storeElement = function(element) {
   element.save(function() {
     console.log("AA")
   })

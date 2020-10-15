@@ -3,32 +3,27 @@ const dBModule = require('./dBModule')
 const personModel = require('./PersonModel');
 const app = express()
 const port = 3000
-
 const clientDir = __dirname + "\\client\\"
-
 const nameList = ['a', 'b', 'c']
+
+app.use(express.static(clientDir))
 
 app.set('viewengine', 'ejs');
 
-app.use(express.static(clientDir))
-app.use(express.json())
-app.use(express.urlencoded())
+app.get('/messages', async (req, res) => {
+  let messages = await messegaModel.getAllMessages()
+  response.render("pages/messegas.ejs", {names: nameList, products: prodList})
+})
 
 app.get('/', function(request, response) {
-  res.sendFile(clientDir + "index.ejs")
+  response.render("pages/index.ejs", {nameList: nameList})
 })
 
-app.get('/stilen', function(request, response) {
-  res.sendFile(clientDir + "stule.css")
-})
 
-app.get('/jesus', function(request, response) {
-  res.sendFile(clientDir + "download.jpg")
-})
 
 app.post('/', function(request, response) {
   let person = personModel()
-  res.redirect('/')
+  response.redirect('/')
 })
 
 app.listen(port, function() {
