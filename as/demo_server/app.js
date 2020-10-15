@@ -5,26 +5,25 @@ const app = express()
 const port = 3000
 
 const clientDir = __dirname + "\\client\\"
-
 app.set('viewengine ejs');
 
 app.use(express.static(clientDir))
 app.use(express.json())
 app.use(express.urlencoded())
 
-app.get('/', function(req, res) {
+app.get('/', function(request, response) {
   res.sendFile(clientDir + "index.ejs")
 })
 
-app.get('/stilen', function(req, res) {
+app.get('/stilen', function(request, response) {
   res.sendFile(clientDir + "stule.css")
 })
 
-app.get('/jesus', function(req, res) {
+app.get('/jesus', function(request, response) {
   res.sendFile(clientDir + "download.jpg")
 })
 
-app.post('/', function(req, res) {
+app.post('/', function(request, response) {
   let person = personModel()
   res.redirect('/')
 })
