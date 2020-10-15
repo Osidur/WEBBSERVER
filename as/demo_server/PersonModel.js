@@ -17,3 +17,8 @@ exports.createPerson = function(name, email, age) {
 
     return person;
 }
+
+exports.getAllPeople = async () => {
+    let people = await Person.find({})
+    return people
+}

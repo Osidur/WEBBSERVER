@@ -6,6 +6,8 @@ const port = 3000
 
 const clientDir = __dirname + "\\client\\"
 
+const nameList = ['a', 'b', 'c']
+
 app.set('viewengine', 'ejs');
 
 app.use(express.static(clientDir))
