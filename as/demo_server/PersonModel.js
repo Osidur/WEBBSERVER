@@ -3,7 +3,7 @@ const personSchema = new mongoose.Schema({
     name: String,
     email: String,
     age: Number
-});
+})
 
 const Person = mongoose.model('Person', personSchema);
 

@@ -15,17 +15,13 @@ app.get('/', (request, response) => {
   response.render("pages/index.ejs", {nameList: nameList})
 })
 
-personModel.createPerson('apa','baa','1000')
-
-/*
 app.post('/', (request, response) => {
-  let person = personModel.()
+  let person = personModel.createPerson()
   response.redirect('/')
 })
-*/
 
-app.get('/messages', async (req, res) => {
-  let messages = await messegaModel.getAllMessages()
+app.get('/messages', async (request, response) => {
+  let messages = await messageModel.getAllMessages()
   response.render("pages/messegas.ejs", {names: nameList, products: prodList})
 })
 
