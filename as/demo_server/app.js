@@ -8,21 +8,23 @@ const clientDir = __dirname + "\\client\\"
 const nameList = ['a', 'b', 'c']
 
 app.use(express.static(clientDir))
-
+app.use(express.json())
+app.use(express.urlencoded())
 app.set('viewengine', 'ejs')
+
 
 app.get('/', (request, response) => {
   response.render("pages/index.ejs", {nameList: nameList})
 })
 
-app.post('/', (request, response) => {
-  let person = personModel.createPerson()
+app.get("/sumbit", (request, response) => {
+  let person = personModel.createPerson(name, email, age)
   response.redirect('/')
 })
 
 app.get('/messages', async (request, response) => {
   let messages = await messageModel.getAllMessages()
-  response.render("pages/messegas.ejs", {names: nameList, products: prodList})
+  response.render("pages/messegas.ejs", {names: nameList})
 })
 
 app.listen(port, function() {
