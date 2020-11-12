@@ -13,8 +13,8 @@ app.use(express.urlencoded())
 app.set('viewengine', 'ejs')
 
 
-app.get('/', (request, response) => {
-  response.render("pages/index.ejs", {nameList: nameList})
+app.get('/', (a, x) => {
+  x.render("pages/index.ejs", {nameList: nameList})
 })
 
 app.get("/sumbit", (request, response) => {
@@ -29,4 +29,4 @@ app.get('/messages', async (request, response) => {
 
 app.listen(port, function() {
   console.log(`Example app listening on port ${port}!`)
-}) 
+})
