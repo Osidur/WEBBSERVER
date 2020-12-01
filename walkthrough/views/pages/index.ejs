@@ -7,11 +7,21 @@
     <title>Website</title>
 </head>
 <body>
+    <h1>baba <%= name %> </h1>
     <div id="box">box</div>
 
     <form action="/" method="post">
         <input type="text" name="message">
+        <input type="email" name="email">
+        <input type="number" name="age">
         <button type="submit">send</button>
     </form>
+    <ol>
+        <% for( let i = 0; i < nameList.length; i++ ) { %>
+            <li>
+                <p>nameList[i]</p>
+            </li>
+        <% } %>
+    </ol>
 </body>
 </html>
